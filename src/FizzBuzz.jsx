@@ -1,11 +1,12 @@
 import React from 'react'
+import './FizzBuzz.css'
 
 const FizzBuzz = ({number}) => {
 
-    const fizzbuzz = (roundNumber) => {
+    const fizzBuzz = (roundNumber) => {
 
         if(roundNumber %15 === 0){
-            return "fizzbuzz";
+            return "fizz-buzz";
         }
         if(roundNumber %5 === 0){
             return "buzz";
@@ -15,13 +16,9 @@ const FizzBuzz = ({number}) => {
         }
         return  String(roundNumber);
     }
-  return (
-    <div>
-        {
-           fizzbuzz(number)
-        }
-    </div>
-  )
+    return (
+        <div className='render' data-testid="fizz-buzz">{fizzBuzz(number)}</div>
+    )
 }
 
 export default FizzBuzz

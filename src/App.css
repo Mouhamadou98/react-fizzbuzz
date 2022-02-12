@@ -1,5 +1,18 @@
 .App {
+  background-image:  url("background.jpg");
+  /* color:#61dafb; */
+  color:white;
+  font-weight: bold;
   text-align: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 8% 25%;
+  padding-left: auto;
+  padding-right: auto;
+  padding-top: auto;
+  padding-bottom: 5px;
+  box-shadow: 10px -5px 5px rgb(189, 174, 174);
+  height: 300px;
 }
 
 .App-logo {

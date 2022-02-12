@@ -1,0 +1,13 @@
+.my-btn{
+    margin-top: 60px;
+    width: 20%;
+    height: 15%;
+    border: none;
+    box-shadow: 2px 2px 2px 1px;
+    text-shadow: 1px 1px 1px;
+    border-radius: 7px;
+    font-weight: bold;
+    font-size: large;
+    background-color: aqua;
+    color: white;
+}
