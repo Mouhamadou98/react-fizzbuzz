@@ -3,29 +3,6 @@ import './FizzBuzz.css'
 
 const FizzBuzz = ({number}) => {
 
-//     const otherCase = (numb) => {
-
-//         let chaine = String(numb);
-// 		let result="";
-
-// 		for(let i = 0; i < chaine.length(); i++) {
-
-// 			let strVar = chaine.charAt(i);
-
-// 			if(strVar==="3")
-// 				result += "Fizz";
-// 			if(strVar==="5")
-// 				result += "Buzz";
-// 		}
-
-// 		if(result==="")
-// 			result = chaine;
-// 		if(result==="BuzzFizz")
-// 			result = "FizzBuzz";
-
-// 		return result;
-//     }
-
     const fizzBuzz = (roundNumber) => {
 
         if (roundNumber) {
