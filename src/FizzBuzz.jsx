@@ -1,31 +1,30 @@
 import React from 'react'
 import './FizzBuzz.css'
 
-const FizzBuzz = ({number}) => {
+export const fizzBuzz = (roundNumber) => {
 
-    const fizzBuzz = (roundNumber) => {
+    let numb = roundNumber;
+    let outValue = String(numb);
+    let cond =  outValue.includes("5") && outValue.includes("3");
 
-        if (roundNumber) {
-
-            if(roundNumber %15 === 0){
-                return "fizz-buzz";
-            }
-            if(roundNumber %5 === 0){
-                return "buzz";
-            }
-            if(roundNumber %3 === 0){
-                return "fizz";
-            }
-
-            let str = String(roundNumber)
-            let finalresult = str.includes("3")?[(str.includes("5")?"fizz-buzz":"fizz")]:[(str.includes("5")?"buzz":(str))]
-
-            return  finalresult;
-        }
-
+    if(roundNumber %15 === 0 || cond) {
+        return "FizzBuzz";
     }
+    if(roundNumber %5 === 0 || outValue.includes("5")) {
+        if(outValue.includes("3"))
+            return "FizzBuzz";
+        return "Buzz";
+    }
+    if(roundNumber %3 === 0 || outValue.includes("3")) {
+        if(outValue.includes("5"))
+            return "FizzBuzz";
+        return "Fizz";
+    }
+    return outValue;
+}
+const FizzBuzz = ({number}) => {
     return (
-        <div className='render' data-testid="fizz-buzz">{fizzBuzz(number)}</div>
+        <div className='render'>{fizzBuzz(number)}</div>
     )
 }
 

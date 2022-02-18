@@ -1,52 +1,36 @@
-import React from "react";
-
-import { render, fireEvent,screen } from "@testing-library/react";
 import "@testing-library/jest-dom"
-//import "jest-dom/extend-expect";
-// import FizzBuzz from "./FizzBuzz";
-import App from "./App";
-import './FizzBuzz'
+import {fizzBuzz} from "./FizzBuzz";
 
-it('renders counter start at 1', () => {
-    render(<App />);
+describe("test sur la fonction exporte", () => {
 
-    expect(screen.getByTestId("fizz-buzz")).toHaveTextContent("1");
-})
+    it("test de retour le nombre passé en paramètre", () => {
+      expect(fizzBuzz(1)).toBe("1");
+      expect(fizzBuzz(2)).toBe("2");
+      expect(fizzBuzz(4)).toBe("4");
+      expect(fizzBuzz(7)).toBe("7");
+      expect(fizzBuzz(8)).toBe("8");
+      expect(fizzBuzz(11)).toBe("11");
+    });
 
-it('Should increment the counter to 1 when we click play', () => {
-    render(<App />);
-    fireEvent.click(screen.getByText("Play"));
-    expect(screen.getByTestId("fizz-buzz")).toHaveTextContent("2")
+    it("test de retour Fizz", () => {
+      expect(fizzBuzz(3)).toBe("Fizz");
+      expect(fizzBuzz(13)).toBe("Fizz");
+      expect(fizzBuzz(31)).toBe("Fizz");
+      expect(fizzBuzz(73)).toBe("Fizz");
+    });
 
-    fireEvent.click(screen.getByText("Play"));
-    expect(screen.getByTestId("fizz-buzz")).toHaveTextContent("fizz")
+    it("test de retour Buzz", () => {
+      expect(fizzBuzz(5)).toBe("Buzz");
+      expect(fizzBuzz(10)).toBe("Buzz");
+      expect(fizzBuzz(25)).toBe("Buzz");
+      expect(fizzBuzz(58)).toBe("Buzz");
+      expect(fizzBuzz(59)).toBe("Buzz");
+    });
 
-    fireEvent.click(screen.getByText("Play"));
-    expect(screen.getByTestId("fizz-buzz")).toHaveTextContent("4")
-
-    fireEvent.click(screen.getByText("Play"));
-    expect(screen.getByTestId("fizz-buzz")).toHaveTextContent("buzz")
-
-    fireEvent.click(screen.getByText("Play"));
-    expect(screen.getByTestId("fizz-buzz")).toHaveTextContent("fizz")
-
-    fireEvent.click(screen.getByText("Play"));
-    expect(screen.getByTestId("fizz-buzz")).toHaveTextContent("7")
-
-    fireEvent.click(screen.getByText("Play"));
-    fireEvent.click(screen.getByText("Play"));
-    fireEvent.click(screen.getByText("Play"));
-    fireEvent.click(screen.getByText("Play"));
-    fireEvent.click(screen.getByText("Play"));
-    fireEvent.click(screen.getByText("Play"));
-
-    expect(screen.getByTestId("fizz-buzz")).toHaveTextContent("fizz")
-    for (let index = 13; index < 53; index++) {
-        fireEvent.click(screen.getByText("Play"));
-        if(index > 51){
-            // eslint-disable-next-line jest/no-conditional-expect
-            expect(screen.getByTestId("fizz-buzz")).toHaveTextContent("buzz")
-        }
-    }
-
-})
+    it("test de retour FizzBuzz", () => {
+      expect(fizzBuzz(15)).toBe("FizzBuzz");
+      expect(fizzBuzz(30)).toBe("FizzBuzz");
+      expect(fizzBuzz(45)).toBe("FizzBuzz");
+      expect(fizzBuzz(53)).toBe("FizzBuzz");
+    });
+  });
