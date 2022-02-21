@@ -11,13 +11,9 @@ export const fizzBuzz = (roundNumber) => {
         return "FizzBuzz";
     }
     if(roundNumber %5 === 0 || outValue.includes("5")) {
-        if(outValue.includes("3"))
-            return "FizzBuzz";
         return "Buzz";
     }
     if(roundNumber %3 === 0 || outValue.includes("3")) {
-        if(outValue.includes("5"))
-            return "FizzBuzz";
         return "Fizz";
     }
     return outValue;

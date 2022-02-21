@@ -9,7 +9,6 @@ describe("test sur la fonction exporte", () => {
       expect(fizzBuzz(4)).toBe("4");
       expect(fizzBuzz(7)).toBe("7");
       expect(fizzBuzz(8)).toBe("8");
-      expect(fizzBuzz(11)).toBe("11");
     });
 
     it("test de retour Fizz", () => {
@@ -33,4 +32,8 @@ describe("test sur la fonction exporte", () => {
       expect(fizzBuzz(45)).toBe("FizzBuzz");
       expect(fizzBuzz(53)).toBe("FizzBuzz");
     });
-  });
+
+    it("test de non retour", () => {
+        expect(fizzBuzz(5)).not.toBe("5");
+    });
+});
